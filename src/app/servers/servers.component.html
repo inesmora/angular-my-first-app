@@ -21,12 +21,16 @@
 </button>
 
 <!--Property binding-->
-<p [innerText] = "allowNewServer"></p>
+<!--p [innerText] = "allowNewServer"></p>-->
 
 <!--String interpolation-->
-<p>{{allowNewServer}}</p>
+<!--<p>{{allowNewServer}}</p>-->
 
 
+<p *ngIf="serverCreated; else noServer">Server was created, server name was {{ serverName }}</p>
+<ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template>
 
 <app-server></app-server>
 <app-server></app-server>
